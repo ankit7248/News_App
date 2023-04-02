@@ -11,11 +11,15 @@ import retrofit2.Response
 
 class NewsViewModel(val newsRepository: NewsRepository) : ViewModel()
 {
- val breakingNews: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
+    val breakingNews: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()  // Mutable live data alwayes check there is changes in breaking news page or not !
     var breakingNewsPage = 1
 
+    init {
+        getBreakingNews("us")
+    }
+
     fun getBreakingNews(countryCode: String) = viewModelScope.launch {
-        breakingNews.postValue(Resource.Loading())
+        breakingNews.postValue(Resource.Loading())  // we post the loading state
 
         val response = newsRepository.getBreakingNews(countryCode, breakingNewsPage)
         breakingNews.postValue(handleBreakingResponse(response))
@@ -24,6 +28,8 @@ class NewsViewModel(val newsRepository: NewsRepository) : ViewModel()
 
     }
 
+
+    // we check In response there is error or not
     private fun handleBreakingResponse(response: Response<NewsResponse>): Resource<NewsResponse>{
         if(response.isSuccessful){
             response.body()?.let{

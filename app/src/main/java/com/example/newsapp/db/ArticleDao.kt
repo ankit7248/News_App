@@ -1,15 +1,13 @@
 package com.example.newsapp.db
 
 import androidx.lifecycle.LiveData
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.newsapp.models.Article
 
+@Dao
 interface ArticleDao {
 
-    //Onconflict determine the if databsase stored then it can replace the database
+    //Onconflict determine that if database stored then it can replace the database
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun update(article: Article):Long

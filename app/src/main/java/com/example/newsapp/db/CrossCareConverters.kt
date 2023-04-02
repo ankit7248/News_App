@@ -1,15 +1,14 @@
 package com.example.newsapp.db
-
-import androidx.room.TypeConverters
+import androidx.room.TypeConverter
 import com.example.newsapp.models.Source
 
-class Converters {
+class CrossCareConverters {
 
-    @TypeConverters
+    @TypeConverter
     fun fromSource(source: Source): String{
         return source.name
     }
-    @TypeConverters
+    @TypeConverter
     fun toSource(name: String): Source{
         return Source(name, name)
     }

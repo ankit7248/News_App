@@ -13,7 +13,7 @@ import com.example.newsapp.R
 import com.example.newsapp.models.Article
 
 
-class NewsAdapter :  RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
+class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
 
     inner class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -76,14 +76,15 @@ class NewsAdapter :  RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
 
 
             val imageView: ImageView = findViewById(R.id.ivArticleImage)
-            Glide.with(this)
+            Glide
+                .with(this)
                 .load(article.urlToImage)
                 .into(imageView)
 
-            holder.Source.setText(article.source.name)
-            holder.Title.setText(article.title)
-            holder.Description.setText(article.description)
-            holder.Published.setText(article.publishedAt)
+            holder.Source.text = article.source.name
+            holder.Title.text = article.title
+            holder.Description.text = article.description
+            holder.Published.text = article.publishedAt
 
 
             setOnClickListener {
@@ -98,5 +99,8 @@ class NewsAdapter :  RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
     // Article ->   Current Article
     private var onItemClickListener: ((Article) -> Unit)? = null
 
+    fun setOnItemClickListener(listener: (Article) -> Unit) {
+        onItemClickListener = listener
     }
+}
 
