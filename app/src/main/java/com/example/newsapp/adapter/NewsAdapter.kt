@@ -1,5 +1,6 @@
 package com.example.newsapp.adapter
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,9 +12,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.newsapp.R
 import com.example.newsapp.models.Article
+import java.time.Instant
 
 
 class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
+
+
 
     inner class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -54,7 +58,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
 
         val itemView =// LayoutInflater gives the object of Layout
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_article_preview, parent, false)
+                .inflate(R.layout.fragment_article, parent, false)
 
 //      // create the Views
         return ArticleViewHolder(itemView)

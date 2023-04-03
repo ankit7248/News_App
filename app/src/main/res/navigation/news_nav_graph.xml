@@ -3,19 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/news_nav_graph"
-    app:startDestination="@id/rvBreakingNews">
+    app:startDestination="@id/BreakingNews">
 
     <fragment
-        android:id="@+id/rvBreakingNews"
-        android:name="com.example.newsapp.BreakingNews"
+        android:id="@+id/BreakingNews"
+        android:name="com.example.newsapp.ui.fragments.BreakingNews"
         android:label="BreakingNews" >
         <action
-            android:id="@+id/action_breakingNews_to_articleFragment"
-            app:destination="@id/articleFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            android:id="@+id/action_BreakingNews_to_articleFragment"
+            app:destination="@id/articleFragment" />
     </fragment>
 
     <fragment
@@ -23,27 +19,19 @@
         android:name="com.example.newsapp.ui.fragments.SavedNews"
         android:label="SavedNews" >
         <action
-            android:id="@+id/action_savedNews_to_articleFragment"
-            app:destination="@id/articleFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            android:id="@+id/action_savedNews_to_articleFragment2"
+            app:destination="@id/articleFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/articleFragment"
-        android:name="com.example.newsapp.ui.fragments.ArticleFragment"
-        android:label="ArticleFragment" />
     <fragment
         android:id="@+id/searchNews"
         android:name="com.example.newsapp.ui.fragments.SearchNews"
         android:label="SearchNews" >
         <action
-            android:id="@+id/action_searchNews_to_articleFragment"
-            app:destination="@id/articleFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            android:id="@+id/action_searchNews_to_articleFragment2"
+            app:destination="@id/articleFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.example.newsapp.ui.fragments.ArticleFragment"
+        android:label="ArticleFragment" />
 </navigation>

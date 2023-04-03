@@ -1,4 +1,4 @@
-package com.example.newsapp
+package com.example.newsapp.ui.fragments
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.newsapp.NewsActivity
+import com.example.newsapp.R
 import com.example.newsapp.UTIL.Resource
 import com.example.newsapp.adapter.NewsAdapter
 import com.example.newsapp.uiViewModels.NewsViewModel
@@ -21,6 +23,7 @@ class BreakingNews : Fragment (R.layout.fragments_breaking_news){
     lateinit var newsAdapter: NewsAdapter
     lateinit var newsRecyclerView: RecyclerView
     lateinit var paginationProgressBar : ProgressBar
+
     val TAG = "BreakingNewsFragment"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -28,7 +31,6 @@ class BreakingNews : Fragment (R.layout.fragments_breaking_news){
         viewModel = (activity as NewsActivity).viewModel
 
         setupRecyclerView()
-
 
 //        viewLifeCycleOwner is LifecycleOwner that represents the Fragment's View lifecycle.
 

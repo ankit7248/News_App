@@ -1,26 +1,29 @@
 package com.example.newsapp
 import android.os.Bundle
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.newsapp.databinding.ActivityMainBinding
 import com.example.newsapp.db.ArticleDatabase
 import com.example.newsapp.uiViewModels.NewsModelProvideFactory
 import com.example.newsapp.uiViewModels.NewsViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class NewsActivity : AppCompatActivity() {
+
+    private var binding: ActivityMainBinding? = null
+
     lateinit var viewModel: NewsViewModel
-    lateinit var bottomNavigationView : BottomNavigationView
+    lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding?.root)
 
-        val navController = findNavController(R.id.newsHostFragment)
-        bottomNavigationView = findViewById(R.id.bottomNavigationView)
-
-        bottomNavigationView.setupWithNavController(navController)
+        binding?.bottomNavigationView?.setupWithNavController(navController)
 
         val Repository = NewsRepository(ArticleDatabase(this))
         val viewModelProviderFactory = NewsModelProvideFactory(Repository)
@@ -28,5 +31,9 @@ class NewsActivity : AppCompatActivity() {
 
 
     }
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        binding = null
+//    }
 
 }

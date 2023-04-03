@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".BreakingNews"
+    tools:context=".ui.fragments.BreakingNews"
     android:layout_height="match_parent">
 
 
@@ -12,11 +12,11 @@
         android:id="@+id/RecyclerView1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        tools:listitem="@layout/item_article_preview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp"
+        tools:listitem="@layout/fragment_article" />
 
     <ProgressBar
         android:id="@+id/paginationProgressBar"
