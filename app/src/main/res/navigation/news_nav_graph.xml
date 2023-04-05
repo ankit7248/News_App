@@ -12,6 +12,12 @@
         <action
             android:id="@+id/action_BreakingNews_to_articleFragment"
             app:destination="@id/articleFragment" />
+        <action
+            android:id="@+id/action_BreakingNews_to_searchNews"
+            app:destination="@id/searchNews" />
+        <action
+            android:id="@+id/action_BreakingNews_to_savedNews"
+            app:destination="@id/savedNews" />
     </fragment>
 
     <fragment

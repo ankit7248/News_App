@@ -13,7 +13,7 @@ interface NewsApi {
 @GET("v2/top-headlines")  // we want to get data from api in breaking news
 suspend fun getBreakingNews(
     @Query("country")
-    countryCode: String ="us",
+    countryCode: String ="IN",
     @Query("page")
     pageNumber: Int = 1,
     @Query("apikey")
@@ -25,7 +25,7 @@ suspend fun getBreakingNews(
     @GET("v2/everything")
     suspend fun searchForNews(
         @Query("q")
-        countryCode: String ="us",
+        countryCode: String ="IN",
         @Query("page")
         pageNumber: Int = 1,
         @Query("apiKey")

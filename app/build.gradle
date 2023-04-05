@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.newsapp"
-        minSdk 26
+        minSdk 25
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -46,6 +46,8 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation "androidx.fragment:fragment:1.2.5"
 
     //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.7.2'

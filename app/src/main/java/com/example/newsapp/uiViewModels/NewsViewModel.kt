@@ -15,7 +15,7 @@ class NewsViewModel(val newsRepository: NewsRepository) : ViewModel()
     var breakingNewsPage = 1
 
     init {
-        getBreakingNews("us")
+        getBreakingNews("IN")
     }
 
     fun getBreakingNews(countryCode: String) = viewModelScope.launch {

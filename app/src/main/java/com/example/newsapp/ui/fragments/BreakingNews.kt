@@ -58,6 +58,13 @@ class BreakingNews : Fragment (R.layout.fragments_breaking_news){
         })
         // we can use the breaking news in mainActivity
     }
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
+        val v = inflater.inflate(R.layout.fragments_breaking_news,container,false)
+        newsRecyclerView = v.findViewById(R.id.RecyclerView1)
+        paginationProgressBar = v.findViewById(R.id.paginationProgressBar)
+        return v
+    }
     private fun hideProgressBar()
     {
      paginationProgressBar.visibility = View.INVISIBLE
@@ -68,12 +75,7 @@ class BreakingNews : Fragment (R.layout.fragments_breaking_news){
         paginationProgressBar.visibility = View.VISIBLE
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
-        val v = inflater.inflate(R.layout.fragments_breaking_news,container,false)
-        newsRecyclerView = v.findViewById(R.id.RecyclerView1)
-        return v
-    }
+
     private fun setupRecyclerView() {
 
         newsAdapter = NewsAdapter()

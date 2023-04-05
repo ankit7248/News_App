@@ -12,24 +12,28 @@ import com.example.newsapp.uiViewModels.NewsViewModel
 
 class ArticleFragment : Fragment(R.layout.fragment_article) {
 
+//    lateinit var viewModel: NewsViewModel
+//    private var _binding : ActivityMainBinding? = null
+//    private val binding get() = _binding!!   // using ViewBinding
+//
+//
+//    override fun onCreateView(
+//        inflater: LayoutInflater,
+//        container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        _binding = ActivityMainBinding.inflate(inflater,container,false)
+//        viewModel = (activity as NewsActivity).viewModel
+//
+//        return binding.root
+//    }
+
     lateinit var viewModel: NewsViewModel
-    private var _binding : ActivityMainBinding? = null
-    private val binding get() = _binding!!   // using ViewBinding
 
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = ActivityMainBinding.inflate(inflater,container,false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as NewsActivity).viewModel
-
-        return view
     }
-
-
-
 
 
 
